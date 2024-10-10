@@ -1,0 +1,149 @@
+
+    /* HTML */
+html {
+    scroll-behavior: smooth;
+  }
+
+
+    /* Fonts */
+h1, h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+  }
+
+a {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+}
+  
+p {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+  }
+
+    /* Background */
+body {
+    background-color: #181818;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+
+    /* SearchBar */
+.search-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#search-bar {
+    background-color: #282828;
+    border: 2.5px solid #333333;
+    border-radius: 2.5px;
+    color: #fff;
+    padding: 16px;
+    width: 100%;
+    transition: all 0.5s ease-out;
+    overflow: auto;
+}
+
+.search-bar:focus {
+    border: 2.5px solid #555;
+    outline: none;
+  }
+
+  @media (min-width: 768px) {
+    #search-bar {
+      width: 600px;
+    }
+  }
+
+    /* Navigation Menu */
+.sidebar {
+    margin: 0;
+    margin-top: 0;
+    margin-left: 0px;
+    padding: 0;
+    width: 200px;
+    background-color: #202020;
+    border: #333333;
+    border-radius: 2.5px;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  .sidebar a {
+    display: block;
+    color: #fff;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  .sidebar a.active {
+    background-color: #272727;
+    color: #fff;
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: #303030;
+    color: #fff;
+  }
+
+  .sidebar p {
+    display: block;
+    color: #fff;
+    padding: 16px;
+    text-decoration: none;
+    transition: all 0.5s ease-out
+  }
+  
+  .sidebar p.active {
+    background-color: #272727;
+    color: #fff;
+  }
+  
+  .sidebar p:hover:not(.active) {
+    background-color: #303030;
+    color: #fff;
+  }
+
+    /* Content */
+  div.content {
+    margin-top: 50px;
+    margin-left: 250px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    padding: 1px 16px;
+    height: 1000px;
+    overflow: auto;
+
+    background-color: #272727;
+    
+    color: #fff;
+  }
+
+    /* Some Testing */
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 200px;
+    }
+    .search-container {
+      order: 2;
+    }
+  }
