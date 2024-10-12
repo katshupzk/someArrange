@@ -37,18 +37,27 @@ body {
 #search-bar {
     background-color: #282828;
     border: 2.5px solid #333333;
-    border-radius: 2.5px;
     color: #fff;
     padding: 16px;
     width: 100%;
-    transition: all 0.5s ease-out;
+    transition: width .5s ease-in-out;
     overflow: auto;
+    outline: none;
 }
 
-.search-bar:focus {
-    border: 2.5px solid #555;
-    outline: none;
-  }
+#search-bar:hover {
+  background-color: #252525;
+  border: 2.5px solid #555;
+  outline: none;
+  width: 50%;
+}
+
+#search-bar:focus {
+  background-color: #252525;
+  border: 2.5px solid #555;
+  outline: none;
+  width: 50%;
+}
 
   @media (min-width: 768px) {
     #search-bar {
@@ -68,6 +77,7 @@ body {
     position: fixed;
     height: 100%;
     overflow: auto;
+    text-align: left;
   }
   
   .sidebar a {
@@ -78,12 +88,12 @@ body {
   }
   
   .sidebar a.active {
-    background-color: #272727;
+    background-color: #252525;
     color: #fff;
   }
   
   .sidebar a:hover:not(.active) {
-    background-color: #303030;
+    background-color: #252525;
     color: #fff;
   }
 
@@ -96,18 +106,23 @@ body {
   }
   
   .sidebar p.active {
-    background-color: #272727;
+    background-color: #252525;
     color: #fff;
   }
   
   .sidebar p:hover:not(.active) {
-    background-color: #303030;
+    background-color: #252525;
     color: #fff;
   }
 
-  #arrow-img {
-    width: 15%;
-    height: 15%;
+  #filter {
+    text-align: left;
+    transition: all .75s ease;
+    height: 5%;
+  }
+
+  #filter:hover {
+    height: 85%
   }
 
     /* Content */
@@ -115,7 +130,6 @@ body {
     margin-top: 50px;
     margin-left: 250px;
     margin-right: 50px;
-    margin-bottom: 50px;
     padding: 1px 16px;
     height: 100%;
     overflow: auto;
@@ -129,6 +143,7 @@ body {
       margin-top: 25px;
       margin-left: auto;
       margin-right: auto;
+      margin-bottom: 25px;
       border-collapse: collapse;
       overflow: auto;
       width: 98.5%;
@@ -140,9 +155,11 @@ body {
     margin-top: 25px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 25px;
     border-collapse: collapse;
     overflow: auto;
     width: 90%;
+    height: 100%;
     border: 1px solid #303030;
 }
 
@@ -151,6 +168,14 @@ body {
     margin-left: auto;
     margin-right: auto;
     vertical-align: middle;
+  }
+
+  tr {
+    transition: all .35s ease;
+  }
+
+  tr:hover {
+    background-color: #222222;
   }
 
 
@@ -165,10 +190,11 @@ select {
   padding: 0.25rem 0.5rem;
   cursor: pointer;
   border-radius: 4px;
+  transition: all .25s ease;
 }
 
 select:hover {
-  background-color: #303030;
+  background-color: #353535;
 }
 
 option {
