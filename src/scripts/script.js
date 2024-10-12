@@ -7,6 +7,7 @@ const sortAuthor = document.getElementById("sortAuthor");
 const sortPopularity = document.getElementById("sortPopularity");
 const sortYearReleased = document.getElementById("sortYearReleased");
 const dataTableContent = document.getElementById("data-table-content");
+const searchBar = document.getElementById("search-bar");
 
 // Sort Data
 function sortData(property, order) {
@@ -23,11 +24,11 @@ function sortData(property, order) {
 }
 
 // Update Table
-function updateTable() {
+function updateTable(filteredData = writings.data) {
   // Clear
   dataTableContent.innerHTML = '';
 
-  writings.data.forEach(writing => {
+  filteredData.forEach(writing => {
     const row = document.createElement("tr");
 
     const titleCell = document.createElement("td");
@@ -56,6 +57,17 @@ function updateTable() {
 
 updateTable();
 
+// Search Data
+function searchData(query) {
+  const filteredData = writings.data.filter(writing =>
+    writing.title.toLowerCase().includes(query.toLowerCase()) ||
+    writing.author.toLowerCase().includes(query.toLowerCase()) ||
+    writing.genre.toLowerCase().includes(query.toLowerCase()) ||
+    writing.yearReleased.toString().includes(query)
+  );
+  updateTable(filteredData);
+}
+
 // Event Listeners
 sortTitle.addEventListener('change', () => {
   sortData('title', sortTitle.value === 'sortA-Z' ? 'asc' : 'desc');
@@ -71,4 +83,8 @@ sortPopularity.addEventListener('change', () => {
 
 sortYearReleased.addEventListener('change', () => {
   sortData('yearReleased', sortYearReleased.value === 'sortHighest' ? 'desc' : 'asc');
+});
+
+searchBar.addEventListener('input', () => {
+  searchData(searchBar.value);
 });
