@@ -14,7 +14,6 @@
         <!-- Sidebar -->
     <div class="sidebar">
         <a class="active" href="#home">ArrangePage</a>
-        <p>Sort by</p>
         <p>Filter by</p>
       </div>
       
@@ -25,15 +24,44 @@
 
         <!-- Content -->
       <div class="content">
+
+                <!-- Table Header -->
         <table id="data-table">
           <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Popularity</th>
+            <th>Title
+              <select name="Sort" id="sortTitle">
+                <option value="sortA-Z">A-Z</option>
+                <option value="sortZ-A">Z-A</option>
+            </select>
+          </th>
+
+            <th>Author
+              <select name="Sort" id="sortAuthor">
+                <option value="sortA-Z">A-Z</option>
+                <option value="sortZ-A">Z-A</option>
+            </select>
+            </th>
+
+            <th>Popularity
+              <select name="SortBy" id="sortPopularity">
+                <option value="sortHighest">Highest</option>
+                <option value="sortLowest">Lowest</option>
+            </select>
+            </th>
+
             <th>Gender</th>
-            <th>Date</th>
+
+            <th>Released Year
+              <select name="SortBy" id="sortYearReleased">
+                <option value="sortHighest">Newest</option>
+                <option value="sortLowest">Older</option>
+            </select>
+            </th>
           </tr>
         </table>
+
+        <!-- Content Table -->
+        <table id="data-table-content"></table>
       </div>
     
       <link rel="stylesheet" href="./src/styles/style.css">
